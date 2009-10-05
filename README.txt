@@ -4,12 +4,12 @@ gocept.month
 
 A datatype which stores a year and a month.
 
-This packages provides the datatype Month (typical usage: Month(4, 2003)),
-which supports conversion to and from strings, as well as a zope.schema field
-and widgets for both zope.formlib and z3c.form.
+This package provides the data type ``Month`` (typical usage:
+``Month(4, 2003)``), which supports conversion to and from strings, as well as
+a zope.schema field and widgets for both zope.formlib and z3c.form.
 
-To use, <include package="gocept.month"/> and for example, use in an interface
-like this:
+To use the month field, ``<include package="gocept.month"/>`` and declare a
+schema like this:
 
     >>> import gocept.month
     >>> import zope.interface

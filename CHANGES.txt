@@ -10,4 +10,4 @@ CHANGES
 1.0 (2009-10-05)
 ----------------
 
-- initial public release.
+- Initial public release.

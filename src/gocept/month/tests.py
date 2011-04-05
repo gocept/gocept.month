@@ -2,12 +2,12 @@
 # See also LICENSE.txt
 
 from datetime import date
+from doctest import DocTestSuite
 from gocept.month.adapter import Date, BuiltinStr
 from gocept.month.interfaces import IDate, IMonth
-from zope.testing.doctest import DocTestSuite
 import unittest
-import zope.interface
 import zope.component
+import zope.interface
 
 
 class Layer(object):
@@ -39,4 +39,3 @@ def test_suite():
         ))
     suite.layer = layer
     return suite
-

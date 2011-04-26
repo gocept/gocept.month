@@ -1,8 +1,8 @@
 CHANGES
 =======
 
-1.1 (unreleased)
-----------------
+1.0.1 (2011-04-26)
+------------------
 
 - Declare dependencies that some upstream packages need but don't declare
 - Use stdlib's doctest module, not zope.testing's which is deprecated

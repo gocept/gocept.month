@@ -377,3 +377,29 @@ class Month(object):
         """
         return (datetime.date(self.year, self.month, day)
                 for day in range(1, self.lastOfMonth().day + 1))
+
+    def __contains__(self, date):
+        """Returns whether the `date` is in the month.
+
+        >>> import datetime
+        >>> datetime.date(2009, 4, 30) in Month(5, 2009)
+        False
+        >>> datetime.date(2009, 5, 1) in Month(5, 2009)
+        True
+        >>> datetime.date(2009, 5, 2) in Month(5, 2009)
+        True
+        >>> datetime.date(2009, 5, 31) in Month(5, 2009)
+        True
+        >>> datetime.date(2009, 6, 1) in Month(5, 2009)
+        False
+        >>> datetime.date(2012, 2, 29) in Month(2, 2012)
+        True
+        >>> datetime.datetime(2012, 2, 29, 15, 7, 34) in Month(2, 2012)
+        True
+        >>> object() in Month(2, 2012)
+        False
+
+        """
+        if not isinstance(date, datetime.date):
+            return False
+        return date.year == self.year and date.month == self.month

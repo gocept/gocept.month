@@ -63,8 +63,10 @@ class IMonth(Interface):
         """Returns an iterator over the days of the month.
 
         Represents each day as a datetime.date.
-
         """
+
+    def __contains__(date):
+        """Returns whether the `date` is in the month."""
 
 
 class IMonthInterval(Interface):

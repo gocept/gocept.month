@@ -4,14 +4,15 @@ CHANGES
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added ``__contains__`` method on ``Month``.
 
 
 1.0.1 (2011-04-26)
 ------------------
 
-- Declare dependencies that some upstream packages need but don't declare
-- Use stdlib's doctest module, not zope.testing's which is deprecated
+- Declare dependencies that some upstream packages need but don't declare.
+
+- Use stdlib's doctest module, not zope.testing's which is deprecated.
 
 
 1.0 (2009-10-05)

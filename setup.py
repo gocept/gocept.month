@@ -33,5 +33,6 @@ setup(
     ],
     extras_require=dict(test=[
         'zope.testing',
+        'zope.site', # required by z3c.form which is too old to recognize zope.component.hooks
     ]),
 )

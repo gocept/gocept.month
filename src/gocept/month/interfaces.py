@@ -11,6 +11,12 @@ class IMonthClass(Interface):
     def current():
         """Return a month instance for the current month."""
 
+    def fromString(string):
+        """Get instance from a string.
+
+        Raises ValueError if not convertable to month.
+        """
+
 
 class IMonth(Interface):
     """A datatype which stores a year and a month."""
@@ -31,12 +37,6 @@ class IMonth(Interface):
 
         DEPRECATED: Use `month in month_interval` instead.
 
-        """
-
-    def fromString(string):
-        """Get instance from a string.
-
-        Raises ValueError if not convertable to month.
         """
 
     def lastOfMonth():

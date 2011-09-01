@@ -4,7 +4,7 @@ CHANGES
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Declared ``fromString`` method as a class method in interface.
 
 
 1.0.2 (2011-09-01)

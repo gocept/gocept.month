@@ -4,6 +4,7 @@ CHANGES
 1.0.3 (unreleased)
 ------------------
 
+- Add MonthInterval.forYear().
 - Declared ``fromString`` method as a class method in interface.
 
 

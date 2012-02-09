@@ -1,7 +1,7 @@
 # Copyright (c) 2008-2009 gocept gmbh & co. kg
 # See also LICENSE.txt
 
-from gocept.month import IMonthInterval, IMonth
+from gocept.month import IMonthInterval, IMonth, Month
 import gocept.month
 import zope.interface
 
@@ -232,3 +232,12 @@ class MonthInterval(object):
         else:
             start, end = self.end, self.start
         return MonthInterval(start, end)
+
+    @classmethod
+    def forYear(cls, year):
+        """Returns an interval of months for the given year.
+
+        >>> MonthInterval.forYear(2001)
+        <MonthInterval from Month 1/2001 to Month 12/2001>
+        """
+        return cls(Month(1, year), Month(12, year))

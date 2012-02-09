@@ -90,6 +90,8 @@ class IMonthInterval(Interface):
     def __contains__(month):
         """Returns true if the given month is within the interval."""
 
+    def forYear(year):
+        """(classmethod) Returns an interval of months for the given year."""
 
 class IMonthField(IMinMax, IField):
     u"""Field containing a Month."""

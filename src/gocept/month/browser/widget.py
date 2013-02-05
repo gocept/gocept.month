@@ -1,11 +1,11 @@
 # coding: utf-8
-# Copyright (c) 2005-2009 gocept gmbh & co. kg
+# Copyright (c) 2005-2009, 2013 gocept gmbh & co. kg
 # See also LICENSE.txt
 
 from gocept.month import Month
-from zope.app.form.browser.textwidgets import escape, TextWidget
-from zope.app.form.browser.widget import DisplayWidget, renderElement
-from zope.app.form.interfaces import IDisplayWidget, IInputWidget, ConversionError
+from zope.formlib.textwidgets import escape, TextWidget
+from zope.formlib.widget import DisplayWidget, renderElement
+from zope.formlib.interfaces import IDisplayWidget, IInputWidget, ConversionError
 import gocept.month.field
 import z3c.form.error
 import zope.component

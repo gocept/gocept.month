@@ -24,11 +24,10 @@ setup(
     install_requires=[
         'setuptools',
         'z3c.form',
-        'zope.app.form',
+        'zope.formlib >= 4.0',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
-        'zope.app.pagetemplate', # somebody doesn't declare they need this
         'zope.schema',
     ],
     extras_require=dict(test=[

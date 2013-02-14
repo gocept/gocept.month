@@ -39,6 +39,9 @@ class IMonth(Interface):
 
         """
 
+    def firstOfMonth():
+        "Get the datetime.date which represents the first day of the month."
+
     def lastOfMonth():
         """Get the datetime.date which represents the last day of the month."""
 

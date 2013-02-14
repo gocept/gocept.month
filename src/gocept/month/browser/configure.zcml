@@ -6,7 +6,7 @@
   <view
     type="zope.publisher.interfaces.browser.IBrowserRequest"
     for="gocept.month.interfaces.IMonthField"
-    provides="zope.app.form.interfaces.IDisplayWidget"
+    provides="zope.formlib.interfaces.IDisplayWidget"
     factory=".widget.MonthDisplayWidget"
     permission="zope.Public"
     />
@@ -14,7 +14,7 @@
   <view
     type="zope.publisher.interfaces.browser.IBrowserRequest"
     for="gocept.month.interfaces.IMonthField"
-    provides="zope.app.form.interfaces.IInputWidget"
+    provides="zope.formlib.interfaces.IInputWidget"
     factory=".widget.MonthEditWidget"
     permission="zope.Public"
     />

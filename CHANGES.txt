@@ -4,6 +4,8 @@ CHANGES
 1.2 (unreleased)
 ----------------
 
+- Added ``firstOfMonth`` method to ``Month``.
+
 - Using `zope.formlib >= 4.0` instead of `zope.app.form`.
 
 - Updated to ZTK 1.1.5.

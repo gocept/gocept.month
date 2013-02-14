@@ -260,6 +260,16 @@ class Month(object):
             year = "20%s" % year
         return Month(int(month), int(year))
 
+    def firstOfMonth(self):
+        """Get the datetime.date which represents the first day of the month.
+
+        >>> Month(11, 2005).firstOfMonth()
+        datetime.date(2005, 11, 1)
+        >>> Month(1, 2000).firstOfMonth()
+        datetime.date(2000, 1, 1)
+        """
+        return datetime.date(self.year, self.month, 1)
+
     def lastOfMonth(self):
         """Get the datetime.date which represents the last day of the month.
 
@@ -271,9 +281,7 @@ class Month(object):
         datetime.date(2008, 2, 29)
         """
         next_month = self + 1
-        first_of_next = datetime.date(next_month.year, next_month.month, 1)
-        last_of_current = first_of_next - datetime.timedelta(days=1)
-        return last_of_current
+        return next_month.firstOfMonth() - datetime.timedelta(days=1)
 
     def __sub__(self, other):
         """Substract from this month.

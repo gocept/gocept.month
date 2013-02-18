@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.month',
-    version='1.2.dev0',
+    version='1.2',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
     url='http://pypi.python.org/pypi/gocept.month',

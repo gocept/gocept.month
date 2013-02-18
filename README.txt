@@ -18,3 +18,7 @@ schema like this:
     ...     title = zope.schema.TextLine(title=u"Contract title")
     ...     start = gocept.month.MonthField(title=u"Starting date")
     ...     end = gocept.month.MonthField(title=u"Ending date")
+
+To use the form widgets, you need to require the ``form`` setuptools extra
+(i.e. ``gocept.month[form]``), and ``<include
+package="gocept.month.browser"/>`` in your ZCML.

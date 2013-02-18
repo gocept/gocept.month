@@ -23,15 +23,18 @@ setup(
     namespace_packages = ['gocept'],
     install_requires=[
         'setuptools',
-        'z3c.form',
-        'zope.formlib >= 4.0',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
         'zope.schema',
     ],
-    extras_require=dict(test=[
+    extras_require=dict(
+        form=[
+            'z3c.form',
+            'zope.formlib >= 4.0',
+        ],
+        test=[
         'zope.testing',
-        'zope.site', # required by z3c.form which is too old to recognize zope.component.hooks
+        'zope.site',  # required by z3c.form which is too old to recognize zope.component.hooks
     ]),
 )

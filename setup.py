@@ -34,6 +34,7 @@ setup(
             'zope.formlib >= 4.0',
         ],
         test=[
+        'zope.app.pagetemplate',  # required by z3c.form which doesn't declare it
         'zope.testing',
         'zope.site',  # required by z3c.form which is too old to recognize zope.component.hooks
     ]),

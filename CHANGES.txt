@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-1.2 (unreleased)
+1.2 (2013-02-18)
 ----------------
 
 - Split off widgets into setuptools extra ``form``, and don't include the

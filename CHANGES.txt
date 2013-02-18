@@ -4,6 +4,10 @@ CHANGES
 1.2 (unreleased)
 ----------------
 
+- Split off widgets into setuptools extra ``form``, and don't include the
+  ``browser`` ZCML by ourselves, so clients can use only the domain part of
+  this package without the UI parts.
+
 - Added ``firstOfMonth`` method to ``Month``.
 
 - Using `zope.formlib >= 4.0` instead of `zope.app.form`.

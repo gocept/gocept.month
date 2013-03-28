@@ -4,6 +4,9 @@ gocept.month
 
 A datatype which stores a year and a month.
 
+.. image:: https://builds.gocept.com/job/bandersnatch/badge/icon
+  :target: https://builds.gocept.com/job/bandersnatch/
+
 This package provides the data type ``Month`` (typical usage:
 ``Month(4, 2003)``), which supports conversion to and from strings, as well as
 a zope.schema field and widgets for both zope.formlib and z3c.form.

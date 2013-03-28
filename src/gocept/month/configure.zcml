@@ -35,6 +35,4 @@
     factory=".adapter.BuiltinStr"
     />
 
-  <include package=".browser" />
-
 </configure>

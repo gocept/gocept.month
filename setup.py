@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.month',
-    version='1.2.dev0',
+    version='1.3.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
     url='http://pypi.python.org/pypi/gocept.month',
@@ -23,15 +23,19 @@ setup(
     namespace_packages = ['gocept'],
     install_requires=[
         'setuptools',
-        'z3c.form',
-        'zope.formlib >= 4.0',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
         'zope.schema',
     ],
-    extras_require=dict(test=[
+    extras_require=dict(
+        form=[
+            'z3c.form',
+            'zope.formlib >= 4.0',
+        ],
+        test=[
+        'zope.app.pagetemplate',  # required by z3c.form which doesn't declare it
         'zope.testing',
-        'zope.site', # required by z3c.form which is too old to recognize zope.component.hooks
+        'zope.site',  # required by z3c.form which is too old to recognize zope.component.hooks
     ]),
 )

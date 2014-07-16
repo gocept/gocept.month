@@ -5,7 +5,8 @@
 from gocept.month import Month
 from zope.formlib.textwidgets import escape, TextWidget
 from zope.formlib.widget import DisplayWidget, renderElement
-from zope.formlib.interfaces import IDisplayWidget, IInputWidget, ConversionError
+from zope.formlib.interfaces import (
+    IDisplayWidget, IInputWidget, ConversionError)
 import gocept.month.field
 import z3c.form.error
 import zope.component

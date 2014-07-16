@@ -1,5 +1,6 @@
 <configure
   xmlns="http://namespaces.zope.org/zope"
+  xmlns:z3c="http://namespaces.zope.org/z3c"
   xmlns:browser="http://namespaces.zope.org/browser"
   >
 
@@ -20,10 +21,17 @@
     />
 
   <adapter
-    factory="z3c.form.browser.text.TextFieldWidget"
+    factory=".widget.MonthFieldWidget"
     for="gocept.month.interfaces.IMonthField
          z3c.form.interfaces.IFormLayer"
          />
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget=".widget.MonthWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="month_input.pt"
+      />
 
   <adapter
     factory=".widget.MonthErrorViewSnippet"

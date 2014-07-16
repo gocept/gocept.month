@@ -8,10 +8,14 @@ from zope.formlib.widget import DisplayWidget, renderElement
 from zope.formlib.interfaces import (
     IDisplayWidget, IInputWidget, ConversionError)
 import gocept.month.field
+import z3c.form.browser.text
 import z3c.form.error
+import z3c.form.interfaces
+import z3c.form.widget
 import zope.component
 import zope.i18nmessageid
 import zope.interface
+import zope.schema.interfaces
 
 _ = zope.i18nmessageid.MessageFactory("gocept")
 
@@ -53,6 +57,17 @@ class MonthEditWidget(TextWidget):
             return Month.fromString(input)
         except ValueError, error:
             raise MonthConversionError(error)
+
+
+class MonthWidget(z3c.form.browser.text.TextWidget):
+    """Widget displaying the contents of an IMonthField for z3c.form. """
+
+
+@zope.component.adapter(zope.schema.interfaces.IField,
+                        z3c.form.interfaces.IFormLayer)
+@zope.interface.implementer(z3c.form.interfaces.IFieldWidget)
+def MonthFieldWidget(field, request):
+    return z3c.form.widget.FieldWidget(field, MonthWidget(request))
 
 
 class MonthErrorViewSnippet(z3c.form.error.ErrorViewSnippet):

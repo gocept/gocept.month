@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-1.3 (unreleased)
+1.3 (2014-07-16)
 ----------------
 
 - Add placeholder for month widget in z3c forms describing the required month

@@ -1,6 +1,3 @@
-# Copyright (c) 2009 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from setuptools import setup, find_packages
 
 
@@ -9,10 +6,12 @@ setup(
     version='1.4.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
-    url='http://pypi.python.org/pypi/gocept.month',
+    url='https://bitbucket.org/gocept/gocept.month',
     description="A datatype which stores a year and a month.",
-    long_description= (
-        open('README.txt').read()
+    long_description=(
+        open('COPYRIGHT.txt').read()
+        + '\n\n'
+        + open('README.txt').read()
         + '\n\n'
         + open('CHANGES.txt').read()),
     packages=find_packages('src'),
@@ -34,8 +33,8 @@ setup(
             'zope.formlib >= 4.0',
         ],
         test=[
-        'zope.app.pagetemplate',  # required by z3c.form which doesn't declare it
-        'zope.testing',
-        'zope.site',  # required by z3c.form which is too old to recognize zope.component.hooks
-    ]),
+            'zope.app.pagetemplate',  # required by z3c.form which doesn't declare it
+            'zope.testing',
+            'zope.site',  # required by z3c.form which is too old to recognize zope.component.hooks
+        ]),
 )

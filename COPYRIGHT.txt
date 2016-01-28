@@ -1,4 +1,4 @@
-Copyright (c) 2009-2015 gocept gmbh & co. kg
+Copyright (c) 2009-2016 gocept gmbh & co. kg
 All Rights Reserved.
 
 All Rights Reserved.

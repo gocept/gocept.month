@@ -7,7 +7,8 @@ import zope.interface
 
 
 class MonthInterval(object):
-    """represents a month interval
+    """Represents a month interval.
+
     >>> from zope.interface.verify import verifyClass
     >>> verifyClass(IMonthInterval, MonthInterval)
     True
@@ -60,8 +61,7 @@ class MonthInterval(object):
         return '<MonthInterval from %r to %r>' % (self.start, self.end)
 
     def __iter__(self):
-        """Iterate over all months that are in the interval, including start
-        and end.
+        """Iterate over all months in the interval, including start and end.
 
         >>> from gocept.month import Month
         >>> for m in MonthInterval(Month(1, 2005), Month(12, 2005)):
@@ -186,7 +186,7 @@ class MonthInterval(object):
         return True
 
     def __contains__(self, month):
-        """Returns true if the given month is within the interval.
+        """Return `True` if the given month is within the interval.
 
         >>> from gocept.month import Month
         >>> interval = MonthInterval(Month(1, 2001), Month(5, 2001))
@@ -235,7 +235,7 @@ class MonthInterval(object):
 
     @classmethod
     def forYear(cls, year):
-        """Returns an interval of months for the given year.
+        """Return an interval of months for the given year.
 
         >>> MonthInterval.forYear(2001)
         <MonthInterval from Month 1/2001 to Month 12/2001>

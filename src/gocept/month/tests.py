@@ -1,6 +1,3 @@
-# Copyright (c) 2005-2009 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from datetime import date
 from doctest import DocTestSuite
 from gocept.month.adapter import Date, BuiltinStr

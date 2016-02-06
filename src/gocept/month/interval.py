@@ -115,6 +115,26 @@ class MonthInterval(object):
                 return
             month += op
 
+    def __len__(self):
+        """Return the number of months in the normalized interval.
+
+        >>> from gocept.month import Month
+        >>> len(MonthInterval(Month(1, 2016), Month(1, 2016)))
+        1
+        >>> len(MonthInterval(Month(1, 2016), Month(2, 2016)))
+        2
+        >>> len(MonthInterval(Month(1, 2016), Month(12, 2016)))
+        12
+        >>> len(MonthInterval(Month(1, 2016), Month(1, 2017)))
+        13
+        >>> len(MonthInterval(Month(2, 2016), Month(1, 2016)))
+        2
+        """
+        i = self.normalized()
+        years = i.end.year - i.start.year
+        months = i.end.month - i.start.month
+        return months + years * 12 + 1
+
     def intersects(self, other):
         """Check whether this interval shares months with another interval.
 

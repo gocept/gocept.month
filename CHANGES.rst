@@ -4,6 +4,8 @@ CHANGES
 1.4 (unreleased)
 ----------------
 
+- Add a ``__len__`` method to `MonthInterval`.
+
 - Require `z3c.form >= 2.6` to get rid of some odd test dependencies.
 
 

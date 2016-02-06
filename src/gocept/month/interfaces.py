@@ -98,6 +98,12 @@ class IMonthInterval(Interface):
     def __contains__(month):
         """Return true if the given month is within the interval."""
 
+    def __len__():
+        """Return the number of months in the normalized interval.
+
+        An interval with the same start and end has the length of 1!
+        """
+
     def forYear(year):
         """(classmethod) Returns an interval of months for the given year."""
 

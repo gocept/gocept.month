@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-1.4 (unreleased)
+1.4 (2016-02-07)
 ----------------
 
 - Add a ``__len__`` method to `MonthInterval`.

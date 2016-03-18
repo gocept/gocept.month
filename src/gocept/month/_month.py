@@ -1,6 +1,3 @@
-# Copyright (c) 2005-2009 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from gocept.month.interfaces import IMonth
 import datetime
 import gocept.month
@@ -182,7 +179,7 @@ class Month(object):
         Traceback (most recent call last):
         ...
         TypeError: ('Could not adapt', ['wrong'], <InterfaceClass gocept.month.interfaces.IMonth>)
-        """
+        """  # NOQA
         if a is not None:
             a = IMonth(a)
         if b is not None:

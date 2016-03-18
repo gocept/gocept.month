@@ -127,6 +127,8 @@ class Month(object):
 
         We allow comparison with months that are a string too:
 
+        >>> from gocept.month.testing import setUpZCA, tearDownZCA
+        >>> setUpZCA()
         >>> m1 > "11/2005"
         False
         >>> m1 > "12/2005"
@@ -135,6 +137,7 @@ class Month(object):
         True
         >>> m1 < "12/2005"
         True
+        >>> tearDownZCA()
         """
         try:
             other = IMonth(other)

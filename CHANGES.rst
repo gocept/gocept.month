@@ -4,7 +4,7 @@ CHANGES
 1.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Support Python 2.7 and PyPy only.
 
 
 1.4 (2016-02-07)

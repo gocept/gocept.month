@@ -1,7 +1,4 @@
 # coding: utf-8
-# Copyright (c) 2005-2009, 2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from gocept.month import Month
 from zope.formlib.textwidgets import escape, TextWidget
 from zope.formlib.widget import DisplayWidget, renderElement
@@ -27,10 +24,9 @@ class MonthConversionError(ConversionError):
         return self.__class__.__doc__
 
 
+@zope.interface.implementer(IDisplayWidget)
 class MonthDisplayWidget(DisplayWidget):
     """Widget displaying the contents of an IMonthField."""
-
-    zope.interface.implements(IDisplayWidget)
 
     cssClass = "month"
 
@@ -47,10 +43,9 @@ class MonthDisplayWidget(DisplayWidget):
                              cssClass=self.cssClass)
 
 
+@zope.interface.implementer(IInputWidget)
 class MonthEditWidget(TextWidget):
     """Widget displaying the contents of an IMonthField. """
-
-    zope.interface.implements(IInputWidget)
 
     def _toFieldValue(self, input):
         try:

@@ -1,11 +1,9 @@
-# Copyright (c) 2008-2009 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from gocept.month import IMonthInterval, IMonth, Month
 import gocept.month
 import zope.interface
 
 
+@zope.interface.implementer(IMonthInterval)
 class MonthInterval(object):
     """Represents a month interval.
 
@@ -13,8 +11,6 @@ class MonthInterval(object):
     >>> verifyClass(IMonthInterval, MonthInterval)
     True
     """
-
-    zope.interface.implements(IMonthInterval)
 
     start = None
     end = None

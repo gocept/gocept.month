@@ -6,6 +6,8 @@ CHANGES
 
 - Support Python 2.7 and PyPy only.
 
+- Add tox as testrunner.
+
 
 1.4 (2016-02-07)
 ----------------

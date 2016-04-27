@@ -29,7 +29,7 @@ setup(
     ],
     extras_require=dict(
         form=[
-            'z3c.form >= 2.6',
+            'z3c.form >= 3.0',
             'zope.formlib >= 4.0',
         ],
         test=[

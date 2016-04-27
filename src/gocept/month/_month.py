@@ -23,7 +23,7 @@ class Month(object):
         >>> Month()
         Traceback (most recent call last):
         ...
-        TypeError: __init__() takes exactly 3 arguments (1 given)
+        TypeError: __init__() ... arguments...
         >>> Month(13,2005)
         Traceback (most recent call last):
         ...
@@ -214,12 +214,12 @@ class Month(object):
         Trying to subtract other types raises an error:
         >>> Month(11, 2005) - '1'
         Traceback (most recent call last):
-        TypeError: Can't subtract <type 'str'> from month.
+        TypeError: Can't subtract <... 'str'> from month.
 
         """
         if isinstance(other, int):
             months = other
-            year = self.year - (months / 12)
+            year = self.year - (months // 12)
             month = self.month - months % 12
             if month <= 0:
                 year -= 1
@@ -282,10 +282,10 @@ class Month(object):
 
         Represents each day as a datetime.date.
 
-        >>> days = iter(Month(05, 2009))
-        >>> days.next()
+        >>> days = iter(Month(5, 2009))
+        >>> next(days)
         datetime.date(2009, 5, 1)
-        >>> days.next()
+        >>> next(days)
         datetime.date(2009, 5, 2)
         >>> for day in days: pass
         >>> day

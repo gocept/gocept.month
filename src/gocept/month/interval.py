@@ -61,7 +61,7 @@ class MonthInterval(object):
 
         >>> from gocept.month import Month
         >>> for m in MonthInterval(Month(1, 2005), Month(12, 2005)):
-        ...     print m
+        ...     print(m)
         01/2005
         02/2005
         03/2005
@@ -76,7 +76,7 @@ class MonthInterval(object):
         12/2005
 
         >>> for m in MonthInterval(Month(11, 2005), Month(9, 2005)):
-        ...     print m
+        ...     print(m)
         11/2005
         10/2005
         09/2005
@@ -86,16 +86,16 @@ class MonthInterval(object):
 
         >>> open_interval = MonthInterval(Month(11, 2005), None)
         >>> i = iter(open_interval)
-        >>> print i.next()
+        >>> print(next(i))
         11/2005
-        >>> print i.next()
+        >>> print(next(i))
         12/2005
 
         >>> open_interval = MonthInterval(None, Month(11, 2005))
         >>> i = iter(open_interval)
-        >>> print i.next()
+        >>> print(next(i))
         01/1
-        >>> print i.next()
+        >>> print(next(i))
         02/1
 
         """
@@ -152,7 +152,7 @@ class MonthInterval(object):
         True
         >>> i.intersects(MonthInterval(Month(9, 4), Month(11, 4)))
         False
-        >>> i.intersects(MonthInterval(Month(2, 5), Month(04, 5)))
+        >>> i.intersects(MonthInterval(Month(2, 5), Month(4, 5)))
         True
         >>> i.intersects(i)
         True

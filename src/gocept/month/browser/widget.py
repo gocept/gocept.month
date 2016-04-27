@@ -50,7 +50,7 @@ class MonthEditWidget(TextWidget):
     def _toFieldValue(self, input):
         try:
             return Month.fromString(input)
-        except ValueError, error:
+        except ValueError as error:
             raise MonthConversionError(error)
 
 

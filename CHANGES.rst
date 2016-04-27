@@ -1,10 +1,16 @@
 CHANGES
 =======
 
-1.6 (unreleased)
+2.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Made the package compatible with Python 2.7 and Python 3 at the same time.
+
+- Backwards-incompatible change towards stricter comparison behaviour: While
+  arbitrary objects (except month strings) used to be considered less than any
+  ``Month`` instance, such a comparison now raises a ``TypeError``.
+
+- Removed deprecated ``Month.isBetween`` method.
 
 
 1.5 (2016-04-27)

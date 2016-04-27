@@ -4,6 +4,7 @@ import zope.schema
 import zope.interface
 
 
+@zope.interface.implementer(IMonthField, zope.schema.interfaces.IFromUnicode)
 class MonthField(zope.schema.Orderable, zope.schema.Field):
     """Field containing a Month.
 
@@ -11,8 +12,6 @@ class MonthField(zope.schema.Orderable, zope.schema.Field):
     >>> verifyObject(IMonthField, MonthField())
     True
     """
-
-    zope.interface.implements(IMonthField, zope.schema.interfaces.IFromUnicode)
 
     _type = Month
 

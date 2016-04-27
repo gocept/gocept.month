@@ -22,22 +22,34 @@ class IMonth(Interface):
         'Month part of the date. Must be an int between 1 and 12')
     year = Attribute('Four digit year.')
 
-    def __cmp__(other):
-        """Compare to other.
+    def __eq__(other):
+        """Compare for equality. Not implementing IMonth means inequality."""
 
-        If other is not adaptable to IMonth it is always less than self.
+    def __gt__(other):
+        """Compare for strict ordering (greater than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
         """
 
-    def isBetween(a, b):
-        r"""Test if the month is between two other months
+    def __lt__(other):
+        """Compare for strict ordering (less than other).
 
-        self \element [a,b]
+        If other is not adaptable to IMonth it is considered a TypeError.
 
-        if a or b is None, the interval is open in this direction
+        """
 
-        if a or b not an IMonth or None, raises TypeError
+    def __ge__(other):
+        """Compare for ordering (greater than or equal to other).
 
-        DEPRECATED: Use `month in month_interval` instead.
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+
+    def __le__(other):
+        """Compare for ordering (less than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
 
         """
 

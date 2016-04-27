@@ -5,6 +5,7 @@ import re
 import zope.interface
 
 
+@zope.interface.implementer(IMonth)
 class Month(object):
     """A datatype which stores a year and a month.
 
@@ -12,8 +13,6 @@ class Month(object):
     >>> verifyObject(IMonth, Month(11, 1977))
     True
     """
-
-    zope.interface.implements(IMonth)
 
     month = property(lambda self: self.__month)
     year = property(lambda self: self.__year)
@@ -24,7 +23,7 @@ class Month(object):
         >>> Month()
         Traceback (most recent call last):
         ...
-        TypeError: __init__() takes exactly 3 arguments (1 given)
+        TypeError: __init__() ... arguments...
         >>> Month(13,2005)
         Traceback (most recent call last):
         ...
@@ -57,138 +56,48 @@ class Month(object):
     def __repr__(self):
         return "Month %s/%s" % (self.month, self.year)
 
-    def __cmp__(self, other):
-        """Compare to other.
-        If other is not adaptable to IMonth it is always less than self.
-
-        >>> m1 = Month(11,2005)
-        >>> cmp(m1, None)
-        1
-        >>> cmp(m1, Month(11,2005))
-        0
-        >>> cmp(m1, Month(12,2005))
-        -1
-        >>> cmp(m1, Month(10,2005))
-        1
-        >>> cmp(m1, Month(11,2006))
-        -1
-        >>> cmp(m1, Month(11,2004))
-        1
-
-        >>> m1 == None
-        False
-        >>> m1 == Month(11,2005)
-        True
-        >>> m1 == Month(10,2005)
-        False
-        >>> m1 == Month(11,2004)
-        False
-
-        >>> m1 >= None
-        True
-        >>> m1 >= Month(11,2005)
-        True
-        >>> m1 >= Month(12,2005)
-        False
-        >>> m1 >= Month(10,2005)
-        True
-        >>> m1 >= Month(11,2004)
-        True
-        >>> m1 >= Month(11,2006)
-        False
-        >>> m1 >= Month(12,2006)
-        False
-        >>> m1 >= Month(12,2004)
-        True
-
-        >>> m1 > None
-        True
-        >>> m1 > Month(11,2005)
-        False
-        >>> m1 > Month(12,2005)
-        False
-        >>> m1 > Month(10,2005)
-        True
-        >>> m1 > Month(11,2004)
-        True
-        >>> m1 > Month(11,2006)
-        False
-        >>> m1 > Month(12,2006)
-        False
-        >>> m1 > Month(12,2004)
-        True
-
-        >>> m1 < None
-        False
-        >>> m1 <= None
-        False
-        >>> m1 != None
-        True
-
-        We allow comparison with months that are a string too:
-
-        >>> from gocept.month.testing import setUpZCA, tearDownZCA
-        >>> setUpZCA()
-        >>> m1 > "11/2005"
-        False
-        >>> m1 > "12/2005"
-        False
-        >>> m1 == "11/2005"
-        True
-        >>> m1 < "12/2005"
-        True
-        >>> tearDownZCA()
-        """
+    def __eq__(self, other):
+        """Compare for equality. Not implementing IMonth means inequality."""
         try:
             other = IMonth(other)
         except TypeError:
-            return 1
+            return False
         else:
-            return cmp(self.year, other.year) or cmp(self.month, other.month)
+            return (self.year, self.month) == (other.year, other.month)
 
-    def isBetween(self, a, b):
-        """Check if the month is between a and b.
+    def __gt__(self, other):
+        """Compare for strict ordering (greater than other).
 
-        DEPRECATED: Use `month in month_interval` instead.
+        If other is not adaptable to IMonth it is considered a TypeError.
 
-        >>> m1 = Month(01,2001)
-        >>> m2 = Month(01,2005)
-        >>> m3 = Month(05,2005)
-        >>> m2.isBetween(m1, m3)
-        True
-        >>> m2.isBetween(None, None)
-        True
-        >>> m2.isBetween(None, m1)
-        False
-        >>> m2.isBetween(None, m2)
-        True
-        >>> m2.isBetween(None, m3)
-        True
-        >>> m2.isBetween(m1, None)
-        True
-        >>> m2.isBetween(m2, None)
-        True
-        >>> m2.isBetween(m3, None)
-        False
-        >>> m1.isBetween(m2, m3)
-        False
-        >>> m1.isBetween(m1, m2)
-        True
-        >>> m1.isBetween(['wrong'], m2)
-        Traceback (most recent call last):
-        ...
-        TypeError: ('Could not adapt', ['wrong'], <InterfaceClass gocept.month.interfaces.IMonth>)
-        >>> m1.isBetween(m2, ['wrong'])
-        Traceback (most recent call last):
-        ...
-        TypeError: ('Could not adapt', ['wrong'], <InterfaceClass gocept.month.interfaces.IMonth>)
-        """  # NOQA
-        if a is not None:
-            a = IMonth(a)
-        if b is not None:
-            b = IMonth(b)
+        """
+        other = IMonth(other)
+        return (self.year, self.month) > (other.year, other.month)
 
-        return a <= self and (self <= b or b is None)
+    def __lt__(self, other):
+        """Compare for strict ordering (less than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        other = IMonth(other)
+        return (self.year, self.month) < (other.year, other.month)
+
+    def __ge__(self, other):
+        """Compare for ordering (greater than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        return not(self < other)
+
+    def __le__(self, other):
+        """Compare for ordering (less than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        return not(self > other)
 
     date_regex = re.compile(r"^([0-9]{1,2})[,./-]?([0-9]{2}|[0-9]{4})$")
 
@@ -302,15 +211,15 @@ class Month(object):
         >>> Month(1, 2005) - Month(11, 2005)
         <MonthInterval from Month 1/2005 to Month 11/2005>
 
-        Trying to substract other types raises an error:
+        Trying to subtract other types raises an error:
         >>> Month(11, 2005) - '1'
         Traceback (most recent call last):
-        TypeError: Can't substract <type 'str'> from month.
+        TypeError: Can't subtract <... 'str'> from month.
 
         """
         if isinstance(other, int):
             months = other
-            year = self.year - (months / 12)
+            year = self.year - (months // 12)
             month = self.month - months % 12
             if month <= 0:
                 year -= 1
@@ -318,7 +227,7 @@ class Month(object):
             return Month(month, year)
         elif IMonth.providedBy(other):
             return gocept.month.MonthInterval(self, other)
-        raise TypeError("Can't substract %r from month." % type(other))
+        raise TypeError("Can't subtract %r from month." % type(other))
 
     def __add__(self, months):
         """Add months and return a new IMonth.
@@ -373,10 +282,10 @@ class Month(object):
 
         Represents each day as a datetime.date.
 
-        >>> days = iter(Month(05, 2009))
-        >>> days.next()
+        >>> days = iter(Month(5, 2009))
+        >>> next(days)
         datetime.date(2009, 5, 1)
-        >>> days.next()
+        >>> next(days)
         datetime.date(2009, 5, 2)
         >>> for day in days: pass
         >>> day

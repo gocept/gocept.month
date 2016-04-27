@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.month',
-    version='1.6.dev0',
+    version='2.0.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
     url='https://bitbucket.org/gocept/gocept.month',
@@ -25,7 +25,9 @@ License :: OSI Approved :: Zope Public License
 Programming Language :: Python
 Programming Language :: Python :: 2
 Programming Language :: Python :: 2.7
-Programming Language :: Python :: 2 :: Only
+Programming Language :: Python :: 3
+Programming Language :: Python :: 3.4
+Programming Language :: Python :: 3.5
 Programming Language :: Python :: Implementation :: CPython
 Programming Language :: Python :: Implementation :: PyPy
 Development Status :: 5 - Production/Stable
@@ -51,7 +53,7 @@ Topic :: Utilities
     ],
     extras_require=dict(
         form=[
-            'z3c.form >= 2.6',
+            'z3c.form >= 3.0',
             'zope.formlib >= 4.0',
         ],
         test=[

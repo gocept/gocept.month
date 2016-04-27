@@ -15,11 +15,11 @@ def Date(date):
     True
     >>> Date(today).year == today.year
     True
-    >>> Date(date(2005,12,06))
+    >>> Date(date(2005,12,6))
     Month 12/2005
-    >>> str(Date(date(2005,12,06)))
+    >>> str(Date(date(2005,12,6)))
     '12/2005'
-    >>> str(Date(date(2005,12,06)) + 1)
+    >>> str(Date(date(2005,12,6)) + 1)
     '01/2006'
     >>> Date(today) > Month(today.month, today.year-1)
     True

@@ -19,6 +19,28 @@ setup(
     include_package_data=True,
     zip_safe=False,
     license='ZPL 2.1',
+    classifiers="""\
+License :: OSI Approved
+License :: OSI Approved :: Zope Public License
+Programming Language :: Python
+Programming Language :: Python :: 2
+Programming Language :: Python :: 2.7
+Programming Language :: Python :: 2 :: Only
+Programming Language :: Python :: Implementation :: CPython
+Programming Language :: Python :: Implementation :: PyPy
+Development Status :: 5 - Production/Stable
+Framework :: Zope2
+Framework :: Zope3
+Framework :: Pyramid
+Framework :: Plone
+Intended Audience :: Developers
+Natural Language :: English
+Operating System :: OS Independent
+Topic :: Software Development
+Topic :: Software Development :: Libraries
+Topic :: Software Development :: Libraries :: Python Modules
+Topic :: Utilities
+"""[:-1].split('\n'),
     namespace_packages=['gocept'],
     install_requires=[
         'setuptools',

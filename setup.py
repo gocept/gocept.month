@@ -40,7 +40,7 @@ Topic :: Software Development
 Topic :: Software Development :: Libraries
 Topic :: Software Development :: Libraries :: Python Modules
 Topic :: Utilities
-"""[:-1].split('\n'),
+""".splitlines(),
     namespace_packages=['gocept'],
     install_requires=[
         'setuptools',

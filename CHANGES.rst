@@ -4,6 +4,10 @@ CHANGES
 2.0 (unreleased)
 ----------------
 
+- Backwards-incompatible change towards stricter comparison behaviour: While
+  arbitrary objects (except month strings) used to be considered less than any
+  ``Month`` instance, such a comparison now raises a ``TypeError``.
+
 - Removed deprecated ``Month.isBetween`` method.
 
 

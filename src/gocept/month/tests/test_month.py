@@ -14,8 +14,17 @@ def zca(request):
     request.addfinalizer(gocept.month.testing.tearDownZCA)
 
 
+class FakeMonth:
+    month = 11
+    year = 2005
+
+
+fakemonth = FakeMonth()
+
+
 def test_eq(m):
     assert m != None  # noqa
+    assert m != fakemonth
     assert m == Month(11, 2005)
     assert m != Month(10, 2005)
     assert m != Month(11, 2004)
@@ -29,7 +38,10 @@ def test_lt(m):
     assert not(m < Month(10, 2005))
     assert not(m < Month(11, 2004))
     assert not(m < Month(12, 2004))
-    assert not(m < None)
+    with pytest.raises(TypeError):
+        m < None
+    with pytest.raises(TypeError):
+        m < fakemonth
 
 
 def test_gt(m):
@@ -40,7 +52,10 @@ def test_gt(m):
     assert m > Month(10, 2005)
     assert m > Month(11, 2004)
     assert m > Month(12, 2004)
-    assert m > None
+    with pytest.raises(TypeError):
+        m > None
+    with pytest.raises(TypeError):
+        m > fakemonth
 
 
 def test_le(m):
@@ -51,7 +66,10 @@ def test_le(m):
     assert not(m <= Month(10, 2005))
     assert not(m <= Month(11, 2004))
     assert not(m <= Month(12, 2004))
-    assert not(m <= None)
+    with pytest.raises(TypeError):
+        m <= None
+    with pytest.raises(TypeError):
+        m <= fakemonth
 
 
 def test_ge(m):
@@ -62,7 +80,10 @@ def test_ge(m):
     assert m >= Month(10, 2005)
     assert m >= Month(11, 2004)
     assert m >= Month(12, 2004)
-    assert m >= None
+    with pytest.raises(TypeError):
+        m >= None
+    with pytest.raises(TypeError):
+        m >= fakemonth
 
 
 def test_eq_str(m, zca):

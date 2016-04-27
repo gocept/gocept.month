@@ -22,10 +22,35 @@ class IMonth(Interface):
         'Month part of the date. Must be an int between 1 and 12')
     year = Attribute('Four digit year.')
 
-    def __cmp__(other):
-        """Compare to other.
+    def __eq__(other):
+        """Compare for equality. Not implementing IMonth means inequality."""
 
-        If other is not adaptable to IMonth it is always less than self.
+    def __gt__(other):
+        """Compare for strict ordering (greater than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+
+    def __lt__(other):
+        """Compare for strict ordering (less than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+
+    def __ge__(other):
+        """Compare for ordering (greater than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+
+    def __le__(other):
+        """Compare for ordering (less than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
         """
 
     def firstOfMonth():

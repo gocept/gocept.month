@@ -239,10 +239,10 @@ class Month(object):
         >>> Month(1, 2005) - Month(11, 2005)
         <MonthInterval from Month 1/2005 to Month 11/2005>
 
-        Trying to substract other types raises an error:
+        Trying to subtract other types raises an error:
         >>> Month(11, 2005) - '1'
         Traceback (most recent call last):
-        TypeError: Can't substract <type 'str'> from month.
+        TypeError: Can't subtract <type 'str'> from month.
 
         """
         if isinstance(other, int):
@@ -255,7 +255,7 @@ class Month(object):
             return Month(month, year)
         elif IMonth.providedBy(other):
             return gocept.month.MonthInterval(self, other)
-        raise TypeError("Can't substract %r from month." % type(other))
+        raise TypeError("Can't subtract %r from month." % type(other))
 
     def __add__(self, months):
         """Add months and return a new IMonth.

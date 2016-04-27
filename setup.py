@@ -9,17 +9,17 @@ setup(
     url='https://bitbucket.org/gocept/gocept.month',
     description="A datatype which stores a year and a month.",
     long_description=(
-        open('COPYRIGHT.txt').read()
-        + '\n\n'
-        + open('README.rst').read()
-        + '\n\n'
-        + open('CHANGES.rst').read()),
+        open('COPYRIGHT.txt').read() +
+        '\n\n' +
+        open('README.rst').read() +
+        '\n\n' +
+        open('CHANGES.rst').read()),
     packages=find_packages('src'),
-    package_dir = {'': 'src'},
-    include_package_data = True,
+    package_dir={'': 'src'},
+    include_package_data=True,
     zip_safe=False,
     license='ZPL 2.1',
-    namespace_packages = ['gocept'],
+    namespace_packages=['gocept'],
     install_requires=[
         'setuptools',
         'zope.component',

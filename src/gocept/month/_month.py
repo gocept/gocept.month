@@ -83,50 +83,6 @@ class Month(object):
         else:
             return cmp(self.year, other.year) or cmp(self.month, other.month)
 
-    def isBetween(self, a, b):
-        """Check if the month is between a and b.
-
-        DEPRECATED: Use `month in month_interval` instead.
-
-        >>> m1 = Month(01,2001)
-        >>> m2 = Month(01,2005)
-        >>> m3 = Month(05,2005)
-        >>> m2.isBetween(m1, m3)
-        True
-        >>> m2.isBetween(None, None)
-        True
-        >>> m2.isBetween(None, m1)
-        False
-        >>> m2.isBetween(None, m2)
-        True
-        >>> m2.isBetween(None, m3)
-        True
-        >>> m2.isBetween(m1, None)
-        True
-        >>> m2.isBetween(m2, None)
-        True
-        >>> m2.isBetween(m3, None)
-        False
-        >>> m1.isBetween(m2, m3)
-        False
-        >>> m1.isBetween(m1, m2)
-        True
-        >>> m1.isBetween(['wrong'], m2)
-        Traceback (most recent call last):
-        ...
-        TypeError: ('Could not adapt', ['wrong'], <InterfaceClass gocept.month.interfaces.IMonth>)
-        >>> m1.isBetween(m2, ['wrong'])
-        Traceback (most recent call last):
-        ...
-        TypeError: ('Could not adapt', ['wrong'], <InterfaceClass gocept.month.interfaces.IMonth>)
-        """  # NOQA
-        if a is not None:
-            a = IMonth(a)
-        if b is not None:
-            b = IMonth(b)
-
-        return a <= self and (self <= b or b is None)
-
     date_regex = re.compile(r"^([0-9]{1,2})[,./-]?([0-9]{2}|[0-9]{4})$")
 
     @classmethod

@@ -28,19 +28,6 @@ class IMonth(Interface):
         If other is not adaptable to IMonth it is always less than self.
         """
 
-    def isBetween(a, b):
-        r"""Test if the month is between two other months
-
-        self \element [a,b]
-
-        if a or b is None, the interval is open in this direction
-
-        if a or b not an IMonth or None, raises TypeError
-
-        DEPRECATED: Use `month in month_interval` instead.
-
-        """
-
     def firstOfMonth():
         """Get the date object which represents the first day of the month."""
 

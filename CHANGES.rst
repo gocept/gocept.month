@@ -1,10 +1,10 @@
 CHANGES
 =======
 
-1.5 (unreleased)
+2.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Removed deprecated ``Month.isBetween`` method.
 
 
 1.4 (2016-02-07)

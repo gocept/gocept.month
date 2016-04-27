@@ -1,7 +1,4 @@
 # coding: utf-8
-# Copyright (c) 2005-2009, 2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from gocept.month import Month
 from zope.formlib.textwidgets import escape, TextWidget
 from zope.formlib.widget import DisplayWidget, renderElement

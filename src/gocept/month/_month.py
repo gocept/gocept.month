@@ -5,6 +5,7 @@ import re
 import zope.interface
 
 
+@zope.interface.implementer(IMonth)
 class Month(object):
     """A datatype which stores a year and a month.
 
@@ -12,8 +13,6 @@ class Month(object):
     >>> verifyObject(IMonth, Month(11, 1977))
     True
     """
-
-    zope.interface.implements(IMonth)
 
     month = property(lambda self: self.__month)
     year = property(lambda self: self.__year)

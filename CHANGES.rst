@@ -4,6 +4,8 @@ CHANGES
 2.0 (unreleased)
 ----------------
 
+- Made the package compatible with Python 2.7 and Python 3 at the same time.
+
 - Backwards-incompatible change towards stricter comparison behaviour: While
   arbitrary objects (except month strings) used to be considered less than any
   ``Month`` instance, such a comparison now raises a ``TypeError``.

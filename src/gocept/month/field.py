@@ -1,6 +1,3 @@
-# Copyright (c) 2005-2009 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from gocept.month import Month
 from gocept.month.interfaces import IMonthField
 import zope.schema

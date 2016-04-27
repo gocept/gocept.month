@@ -75,69 +75,6 @@ class Month(object):
         >>> cmp(m1, Month(11,2004))
         1
 
-        >>> m1 == None
-        False
-        >>> m1 == Month(11,2005)
-        True
-        >>> m1 == Month(10,2005)
-        False
-        >>> m1 == Month(11,2004)
-        False
-
-        >>> m1 >= None
-        True
-        >>> m1 >= Month(11,2005)
-        True
-        >>> m1 >= Month(12,2005)
-        False
-        >>> m1 >= Month(10,2005)
-        True
-        >>> m1 >= Month(11,2004)
-        True
-        >>> m1 >= Month(11,2006)
-        False
-        >>> m1 >= Month(12,2006)
-        False
-        >>> m1 >= Month(12,2004)
-        True
-
-        >>> m1 > None
-        True
-        >>> m1 > Month(11,2005)
-        False
-        >>> m1 > Month(12,2005)
-        False
-        >>> m1 > Month(10,2005)
-        True
-        >>> m1 > Month(11,2004)
-        True
-        >>> m1 > Month(11,2006)
-        False
-        >>> m1 > Month(12,2006)
-        False
-        >>> m1 > Month(12,2004)
-        True
-
-        >>> m1 < None
-        False
-        >>> m1 <= None
-        False
-        >>> m1 != None
-        True
-
-        We allow comparison with months that are a string too:
-
-        >>> from gocept.month.testing import setUpZCA, tearDownZCA
-        >>> setUpZCA()
-        >>> m1 > "11/2005"
-        False
-        >>> m1 > "12/2005"
-        False
-        >>> m1 == "11/2005"
-        True
-        >>> m1 < "12/2005"
-        True
-        >>> tearDownZCA()
         """
         try:
             other = IMonth(other)

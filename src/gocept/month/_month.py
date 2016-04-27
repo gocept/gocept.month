@@ -57,31 +57,48 @@ class Month(object):
     def __repr__(self):
         return "Month %s/%s" % (self.month, self.year)
 
-    def __cmp__(self, other):
-        """Compare to other.
-        If other is not adaptable to IMonth it is always less than self.
-
-        >>> m1 = Month(11,2005)
-        >>> cmp(m1, None)
-        1
-        >>> cmp(m1, Month(11,2005))
-        0
-        >>> cmp(m1, Month(12,2005))
-        -1
-        >>> cmp(m1, Month(10,2005))
-        1
-        >>> cmp(m1, Month(11,2006))
-        -1
-        >>> cmp(m1, Month(11,2004))
-        1
-
-        """
+    def __eq__(self, other):
+        """Compare for equality. Not implementing IMonth means inequality."""
         try:
             other = IMonth(other)
         except TypeError:
-            return 1
+            return False
         else:
-            return cmp(self.year, other.year) or cmp(self.month, other.month)
+            return (self.year, self.month) == (other.year, other.month)
+
+    def __gt__(self, other):
+        """Compare for strict ordering (greater than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        other = IMonth(other)
+        return (self.year, self.month) > (other.year, other.month)
+
+    def __lt__(self, other):
+        """Compare for strict ordering (less than other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        other = IMonth(other)
+        return (self.year, self.month) < (other.year, other.month)
+
+    def __ge__(self, other):
+        """Compare for ordering (greater than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        return not(self < other)
+
+    def __le__(self, other):
+        """Compare for ordering (less than or equal to other).
+
+        If other is not adaptable to IMonth it is considered a TypeError.
+
+        """
+        return not(self > other)
 
     date_regex = re.compile(r"^([0-9]{1,2})[,./-]?([0-9]{2}|[0-9]{4})$")
 

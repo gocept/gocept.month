@@ -1,11 +1,13 @@
 from gocept.month.interfaces import IMonth
 import datetime
+import functools
 import gocept.month
 import re
 import zope.interface
 
 
 @zope.interface.implementer(IMonth)
+@functools.total_ordering
 class Month(object):
     """A datatype which stores a year and a month.
 
@@ -73,31 +75,6 @@ class Month(object):
         """
         other = IMonth(other)
         return (self.year, self.month) > (other.year, other.month)
-
-    def __lt__(self, other):
-        """Compare for strict ordering (less than other).
-
-        If other is not adaptable to IMonth it is considered a TypeError.
-
-        """
-        other = IMonth(other)
-        return (self.year, self.month) < (other.year, other.month)
-
-    def __ge__(self, other):
-        """Compare for ordering (greater than or equal to other).
-
-        If other is not adaptable to IMonth it is considered a TypeError.
-
-        """
-        return not(self < other)
-
-    def __le__(self, other):
-        """Compare for ordering (less than or equal to other).
-
-        If other is not adaptable to IMonth it is considered a TypeError.
-
-        """
-        return not(self > other)
 
     date_regex = re.compile(r"^([0-9]{1,2})[,./-]?([0-9]{2}|[0-9]{4})$")
 

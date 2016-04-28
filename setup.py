@@ -48,7 +48,7 @@ Topic :: Utilities
         'setuptools',
         'zope.component',
         'zope.i18nmessageid',
-        'zope.interface',
+        'zope.interface >= 4.0',
         'zope.schema',
     ],
     extras_require=dict(

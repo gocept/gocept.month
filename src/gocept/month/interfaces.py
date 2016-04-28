@@ -1,5 +1,6 @@
 from zope.interface import Interface, Attribute
 from zope.schema.interfaces import IMinMax, IField
+import sys
 
 
 class IMonthClass(Interface):
@@ -24,6 +25,14 @@ class IMonth(Interface):
 
     def __eq__(other):
         """Compare for equality. Not implementing IMonth means inequality."""
+
+    if sys.version_info.major >= 3:
+        def __ne__(other):
+            """Compare for inequality.
+
+            Not implementing IMonth means inequality.
+
+            """
 
     def __gt__(other):
         """Compare for strict ordering (greater than other).

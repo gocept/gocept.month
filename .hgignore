@@ -5,7 +5,5 @@ syntax: glob
 *.swp
 *~
 .cache
-.coverage
 .tox/
-coverage-report
-coverage.xml
+test-report

@@ -10,7 +10,10 @@ omit = */interfaces.py
        */tests/*
 
 [html]
-directory = coverage-report
+directory = test-report/coverage-report
+
+[xml]
+output = test-report/coverage.xml
 
 [paths]
 source =

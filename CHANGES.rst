@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-2.0 (unreleased)
+2.0 (2016-04-28)
 ----------------
 
 - Made the package compatible with Python 2.7 and Python 3 at the same time.

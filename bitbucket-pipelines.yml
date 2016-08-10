@@ -1,10 +1,8 @@
-# We use this image as it combines currently Python 2.7, 3.3, 3.4, 3.5, pypy
-# and pypy3.
-image: ikalnitsky/pythonista
+image: python:3.5
 
 pipelines:
   default:
     - step:
-        script: 
+        script:
           - pip install -U tox
-          - tox
+          - tox -epy35

@@ -59,5 +59,6 @@ Topic :: Utilities
         ],
         test=[
             'zope.testing',
+            'plone.testing',
         ]),
 )

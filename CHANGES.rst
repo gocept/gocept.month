@@ -6,6 +6,8 @@ CHANGES
 
 - Officially support Python 3.6.
 
+- Fix `configure.zcml` to be compatible with Python 3.
+
 
 2.0 (2016-04-28)
 ----------------

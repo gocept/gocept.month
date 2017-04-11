@@ -1,6 +1,19 @@
 from .. import Month
-import gocept.month.testing
+import gocept.month
+import plone.testing
 import pytest
+
+
+def _resourceResolutionOrder(self, instance):
+    """Adapted version to get Python 3 compatibility."""
+    return self._mergeResourceManagers(
+        [[instance]] +
+        list(map(self._resourceResolutionOrder, instance.__bases__)) +
+        [list(instance.__bases__)]
+    )
+
+
+plone.testing.Layer._resourceResolutionOrder = _resourceResolutionOrder
 
 
 @pytest.fixture
@@ -10,8 +23,14 @@ def m():
 
 @pytest.fixture(scope='module')
 def zca(request):
-    gocept.month.testing.setUpZCA()
-    request.addfinalizer(gocept.month.testing.tearDownZCA)
+    """Load ZCML on session module."""
+    import plone.testing.zca
+    layer = plone.testing.zca.ZCMLSandbox(
+        name='MonthZCML', filename='configure.zcml',
+        module=__name__, package=gocept.month)
+    layer.setUp()
+    yield layer
+    layer.tearDown()
 
 
 class FakeMonth:

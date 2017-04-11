@@ -1,19 +1,6 @@
 from .. import Month
 import gocept.month
-import plone.testing
 import pytest
-
-
-def _resourceResolutionOrder(self, instance):
-    """Adapted version to get Python 3 compatibility."""
-    return self._mergeResourceManagers(
-        [[instance]] +
-        list(map(self._resourceResolutionOrder, instance.__bases__)) +
-        [list(instance.__bases__)]
-    )
-
-
-plone.testing.Layer._resourceResolutionOrder = _resourceResolutionOrder
 
 
 @pytest.fixture

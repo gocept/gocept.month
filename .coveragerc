@@ -4,10 +4,11 @@ source = gocept.month
 
 [report]
 precision = 2
-omit = */interfaces.py
-       */interfaces/*
-       */tests.py
-       */tests/*
+omit =
+    src/gocept/__init__.py
+exclude_lines =
+    pragma: no cover
+    class I[A-Z]\w+\((zope\.interface\.Interface|I[A-Z].*)\):
 
 [html]
 directory = test-report/coverage-report

@@ -58,7 +58,6 @@ Topic :: Utilities
             'zope.formlib >= 4.0',
         ],
         test=[
-            'zope.testing',
             'plone.testing',
         ]),
 )

@@ -4,7 +4,7 @@ CHANGES
 2.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Officially support Python 3.6.
 
 
 2.0 (2016-04-28)

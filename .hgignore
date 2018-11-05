@@ -6,6 +6,8 @@ syntax: glob
 *~
 .DS_Store
 .cache
+.coverage
 .coverage.*
+.pytest_cache
 .tox/
 test-report

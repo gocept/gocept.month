@@ -6,7 +6,7 @@ setup(
     version='2.2.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
-    url='https://bitbucket.org/gocept/gocept.month',
+    url='https://github.com/gocept/gocept.month',
     description="A datatype which stores a year and a month.",
     long_description=(
         open('COPYRIGHT.txt').read() +

@@ -10,4 +10,5 @@ syntax: glob
 .coverage.*
 .pytest_cache
 .tox/
+junit-*.xml
 test-report

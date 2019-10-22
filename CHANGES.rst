@@ -1,13 +1,8 @@
 CHANGES
 =======
 
-3.0 (unreleased)
+2.2 (unreleased)
 ----------------
-
-Backwards incompatible CHANGES
-++++++++++++++++++++++++++++++
-
-- Drop support for Python 3.4.
 
 Features
 ++++++++
@@ -18,6 +13,8 @@ Other CHANGES
 +++++++++++++
 
 - Migrate to Github.
+
+- Stop testing with Python 3.4.
 
 
 2.1 (2017-04-13)

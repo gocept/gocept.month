@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.month',
-    version='3.0.dev0',
+    version='2.2.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
     url='https://github.com/gocept/gocept.month',

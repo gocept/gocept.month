@@ -2,6 +2,20 @@
 gocept.month
 ============
 
+.. image:: https://img.shields.io/pypi/v/gocept.month.svg
+    :target: https://pypi.org/project/gocept.month/
+
+.. image:: https://img.shields.io/pypi/pyversions/gocept.month.svg
+    :target: https://pypi.org/project/gocept.month/
+
+.. image:: https://travis-ci.com/gocept/gocept.month.svg?branch=master
+    :target: https://travis-ci.com/gocept/gocept.month
+
+.. image:: https://coveralls.io/repos/github/gocept/gocept.month/badge.svg?branch=master
+    :target: https://coveralls.io/github/gocept/gocept.month?branch=master
+
+
+
 A datatype which stores a year and a month.
 
 This package provides the data type ``Month`` (typical usage:

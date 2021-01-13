@@ -8,8 +8,8 @@ gocept.month
 .. image:: https://img.shields.io/pypi/pyversions/gocept.month.svg
     :target: https://pypi.org/project/gocept.month/
 
-.. image:: https://travis-ci.com/gocept/gocept.month.svg?branch=master
-    :target: https://travis-ci.com/gocept/gocept.month
+.. image:: https://github.com/gocept/gocept.month/workflows/tests/badge.svg
+    :target: https://github.com/gocept/gocept.month/actions?query=workflow%3Atests
 
 .. image:: https://coveralls.io/repos/github/gocept/gocept.month/badge.svg?branch=master
     :target: https://coveralls.io/github/gocept/gocept.month?branch=master

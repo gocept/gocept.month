@@ -8,5 +8,6 @@
 .coverage.*
 .pytest_cache
 .tox/
+coverage-report/
 junit-*.xml
 test-report

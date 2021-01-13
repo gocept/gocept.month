@@ -14,6 +14,8 @@ Other CHANGES
 
 - Migrate to Github.
 
+- Use Github actions as CI.
+
 - Stop testing with Python 3.4.
 
 

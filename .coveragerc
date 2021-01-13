@@ -4,6 +4,7 @@ source = gocept.month
 
 [report]
 precision = 2
+fail_under = 94
 omit =
     src/gocept/__init__.py
 exclude_lines =
@@ -11,10 +12,7 @@ exclude_lines =
     class I[A-Z]\w+\((zope\.interface\.Interface|I[A-Z].*)\):
 
 [html]
-directory = test-report/coverage-report
-
-[xml]
-output = test-report/coverage.xml
+directory = coverage-report
 
 [paths]
 source =

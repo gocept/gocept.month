@@ -1,9 +1,12 @@
 # coding: utf-8
 from gocept.month import Month
-from zope.formlib.textwidgets import escape, TextWidget
-from zope.formlib.widget import DisplayWidget, renderElement
-from zope.formlib.interfaces import (
-    IDisplayWidget, IInputWidget, ConversionError)
+from zope.formlib.interfaces import ConversionError
+from zope.formlib.interfaces import IDisplayWidget
+from zope.formlib.interfaces import IInputWidget
+from zope.formlib.textwidgets import TextWidget
+from zope.formlib.textwidgets import escape
+from zope.formlib.widget import DisplayWidget
+from zope.formlib.widget import renderElement
 import gocept.month.field
 import z3c.form.browser.text
 import z3c.form.error
@@ -13,6 +16,7 @@ import zope.component
 import zope.i18nmessageid
 import zope.interface
 import zope.schema.interfaces
+
 
 _ = zope.i18nmessageid.MessageFactory("gocept")
 

@@ -1,7 +1,7 @@
 from gocept.month import Month
 from gocept.month.interfaces import IMonthField
-import zope.schema
 import zope.interface
+import zope.schema
 
 
 @zope.interface.implementer(IMonthField, zope.schema.interfaces.IFromUnicode)

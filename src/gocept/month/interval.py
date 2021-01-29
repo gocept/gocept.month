@@ -1,5 +1,6 @@
-from gocept.month import IMonthInterval, IMonth, Month
-import gocept.month
+from gocept.month import IMonth
+from gocept.month import IMonthInterval
+from gocept.month import Month
 import zope.interface
 
 
@@ -41,9 +42,9 @@ class MonthInterval(object):
 
         """
         if start is None:
-            start = gocept.month.Month(1, 1)
+            start = Month(1, 1)
         if end is None:
-            end = gocept.month.Month(12, 9999)
+            end = Month(12, 9999)
 
         if not IMonth.providedBy(start):
             raise TypeError("start %r is not a month." % start)

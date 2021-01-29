@@ -1,5 +1,7 @@
-from zope.interface import Interface, Attribute
-from zope.schema.interfaces import IMinMax, IField
+from zope.interface import Attribute
+from zope.interface import Interface
+from zope.schema.interfaces import IField
+from zope.schema.interfaces import IMinMax
 import sys
 
 

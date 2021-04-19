@@ -9,6 +9,12 @@ Features
 
 - Add support for Python 3.7 and 3.8.
 
+Bug fixes
++++++++++
+
+- Add missing security declaration needed for ``.browser.widget.MonthWidget``,
+  the month widget for ``z3c.form``.
+
 Other CHANGES
 +++++++++++++
 

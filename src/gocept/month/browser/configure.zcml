@@ -33,6 +33,13 @@
       template="month_input.pt"
       />
 
+  <class class=".widget.MonthWidget">
+    <require
+        permission="zope.Public"
+        interface="z3c.form.interfaces.ITextWidget"
+        />
+  </class>
+
   <adapter
     factory=".widget.MonthErrorViewSnippet"
     />

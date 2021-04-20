@@ -22,7 +22,7 @@ Other CHANGES
 
 - Use Github actions as CI.
 
-- Stop testing with Python 3.4.
+- Drop support for Python 3.4 and 3.5.
 
 
 2.1 (2017-04-13)

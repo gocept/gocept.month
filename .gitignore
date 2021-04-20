@@ -1,0 +1,13 @@
+*.egg-info
+*.pyc
+*.swp
+*~
+.DS_Store
+.cache
+.coverage
+.coverage.*
+.pytest_cache
+.tox/
+coverage-report/
+junit-*.xml
+test-report

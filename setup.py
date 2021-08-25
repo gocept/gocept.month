@@ -10,8 +10,6 @@ setup(
     url='https://github.com/gocept/gocept.month',
     description="A datatype which stores a year and a month.",
     long_description=(
-        open('COPYRIGHT.txt').read() +
-        '\n\n' +
         open('README.rst').read() +
         '\n\n' +
         open('CHANGES.rst').read()),
@@ -19,10 +17,10 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    license='ZPL 2.1',
+    license='MIT',
     classifiers="""\
 License :: OSI Approved
-License :: OSI Approved :: Zope Public License
+License :: OSI Approved :: MIT License
 Programming Language :: Python
 Programming Language :: Python :: 2
 Programming Language :: Python :: 2.7

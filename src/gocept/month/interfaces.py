@@ -132,7 +132,7 @@ class IMonthInterval(Interface):
 
 
 class IMonthField(IMinMax, IField):
-    u"""Field containing a Month."""
+    """Field containing a Month."""
 
 
 class IDate(Interface):

@@ -1,10 +1,20 @@
 CHANGES
 =======
 
-2.3 (unreleased)
+3.0 (unreleased)
 ----------------
 
+Backwards-incompatible changes
+++++++++++++++++++++++++++++++
+
 - Re-licence from ZPL to MIT licence.
+
+- Drop support for Python 2 and 3.6.
+
+Features
+++++++++
+
+- Add support for Python 3.10 (as of rc.1).
 
 
 2.2 (2021-04-20)

@@ -8,7 +8,7 @@ import zope.interface
 
 @zope.interface.implementer(IMonth)
 @functools.total_ordering
-class Month(object):
+class Month:
     """A datatype which stores a year and a month.
 
     >>> from zope.interface.verify import verifyObject
@@ -22,19 +22,15 @@ class Month(object):
     def __init__(self, month, year):
         """Constructor
 
-        >>> Month()
-        Traceback (most recent call last):
-        ...
-        TypeError: __init__() ... arguments...
-        >>> Month(13,2005)
+        >>> Month(13, 2005)
         Traceback (most recent call last):
         ...
         ValueError: Month must be between 1 and 12.
-        >>> Month(0,2005)
+        >>> Month(0, 2005)
         Traceback (most recent call last):
         ...
         ValueError: Month must be between 1 and 12.
-        >>> Month(11,2005)
+        >>> Month(11, 2005)
         Month 11/2005
         >>> Month(11,5)
         Month 11/5
@@ -56,7 +52,7 @@ class Month(object):
         self.__year = year
 
     def __repr__(self):
-        return "Month %s/%s" % (self.month, self.year)
+        return f"Month {self.month}/{self.year}"
 
     def __eq__(self, other):
         """Compare for equality. Not implementing IMonth means inequality."""
@@ -238,11 +234,11 @@ class Month(object):
         >>> Month(5,2003).year = 2005
         Traceback (most recent call last):
         ...
-        AttributeError: can't set attribute
+        AttributeError: can't set attribute...
         >>> Month(5,2003).month = 4
         Traceback (most recent call last):
         ...
-        AttributeError: can't set attribute
+        AttributeError: can't set attribute...
 
         Check the hash
 
@@ -252,7 +248,7 @@ class Month(object):
         12005
         >>>
         """
-        return int("%s%s" % (self.month, self.year))
+        return int(f"{self.month}{self.year}")
 
     def __iter__(self):
         """Returns an iterator over the days of the month.

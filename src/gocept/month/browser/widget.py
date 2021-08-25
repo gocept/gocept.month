@@ -1,4 +1,3 @@
-# coding: utf-8
 from gocept.month import Month
 from zope.formlib.interfaces import ConversionError
 from zope.formlib.interfaces import IDisplayWidget
@@ -22,7 +21,7 @@ _ = zope.i18nmessageid.MessageFactory("gocept")
 
 
 class MonthConversionError(ConversionError):
-    __doc__ = _(u"Format muss MM/JJJJ sein (z.B. 11/2005 für November 2005).")
+    __doc__ = _("Format muss MM/JJJJ sein (z.B. 11/2005 für November 2005).")
 
     def doc(self):
         return self.__class__.__doc__

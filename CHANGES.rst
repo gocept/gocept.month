@@ -1,7 +1,7 @@
 CHANGES
 =======
 
-3.0 (unreleased)
+3.0 (2021-08-27)
 ----------------
 
 Backwards-incompatible changes

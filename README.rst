@@ -14,6 +14,9 @@ gocept.month
 .. image:: https://coveralls.io/repos/github/gocept/gocept.month/badge.svg?branch=master
     :target: https://coveralls.io/github/gocept/gocept.month?branch=master
 
+.. image:: https://results.pre-commit.ci/badge/github/gocept/gocept.month/main.svg
+   :target: https://results.pre-commit.ci/latest/github/gocept/gocept.month/main
+   :alt: pre-commit.ci status
 
 
 A datatype which stores a year and a month.

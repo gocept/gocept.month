@@ -5,7 +5,7 @@ import zope.interface
 
 
 @zope.interface.implementer(IMonthInterval)
-class MonthInterval(object):
+class MonthInterval:
     """Represents a month interval.
 
     >>> from zope.interface.verify import verifyClass
@@ -55,7 +55,7 @@ class MonthInterval(object):
         self.end = end
 
     def __repr__(self):
-        return '<MonthInterval from %r to %r>' % (self.start, self.end)
+        return f'<MonthInterval from {self.start!r} to {self.end!r}>'
 
     def __iter__(self):
         """Iterate over all months in the interval, including start and end.

@@ -21,23 +21,6 @@
     factory=".adapter.Date"
     />
 
-  <!-- Python 3 has no `basestring` and no `unicode`. As the `compiler` package
-       was also dropped from Python 3, we can use it the make sure these
-       registrations are only done on Python 2.-->
-  <adapter
-    zcml:condition="installed compiler"
-    for="basestring"
-    provides=".IMonth"
-    factory=".adapter.BuiltinStr"
-    />
-
-  <adapter
-    zcml:condition="installed compiler"
-    for="unicode"
-    provides=".IMonth"
-    factory=".adapter.BuiltinStr"
-    />
-
   <adapter
     for="str"
     provides=".IMonth"

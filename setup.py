@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='gocept.month',
-    version='3.0',
+    version='3.1.dev0',
     author='gocept gmbh & co. kg',
     author_email='mail@gocept.com',
     url='https://github.com/gocept/gocept.month',

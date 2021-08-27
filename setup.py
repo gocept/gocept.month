@@ -12,7 +12,7 @@ setup(
         'Issue Tracker':
             'https://github.com/gocept/gocept.month/issues',
         'Sources': 'https://github.com/gocept/gocept.month',
-        'Changelog:
+        'Changelog:'
             'https://raw.githubusercontent.com/gocept/gocept.month/'
             'main/CHANGES.rst',
     },

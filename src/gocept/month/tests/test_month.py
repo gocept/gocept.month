@@ -40,10 +40,10 @@ def test_lt(m):
     assert m < Month(11, 2006)
     assert m < Month(10, 2006)
     assert m < Month(12, 2005)
-    assert not(m < Month(11, 2005))
-    assert not(m < Month(10, 2005))
-    assert not(m < Month(11, 2004))
-    assert not(m < Month(12, 2004))
+    assert not (m < Month(11, 2005))
+    assert not (m < Month(10, 2005))
+    assert not (m < Month(11, 2004))
+    assert not (m < Month(12, 2004))
     with pytest.raises(TypeError):
         m < None
     with pytest.raises(TypeError):
@@ -51,10 +51,10 @@ def test_lt(m):
 
 
 def test_gt(m):
-    assert not(m > Month(11, 2006))
-    assert not(m > Month(10, 2006))
-    assert not(m > Month(12, 2005))
-    assert not(m > Month(11, 2005))
+    assert not (m > Month(11, 2006))
+    assert not (m > Month(10, 2006))
+    assert not (m > Month(12, 2005))
+    assert not (m > Month(11, 2005))
     assert m > Month(10, 2005)
     assert m > Month(11, 2004)
     assert m > Month(12, 2004)
@@ -69,9 +69,9 @@ def test_le(m):
     assert m <= Month(10, 2006)
     assert m <= Month(12, 2005)
     assert m <= Month(11, 2005)
-    assert not(m <= Month(10, 2005))
-    assert not(m <= Month(11, 2004))
-    assert not(m <= Month(12, 2004))
+    assert not (m <= Month(10, 2005))
+    assert not (m <= Month(11, 2004))
+    assert not (m <= Month(12, 2004))
     with pytest.raises(TypeError):
         m <= None
     with pytest.raises(TypeError):
@@ -79,9 +79,9 @@ def test_le(m):
 
 
 def test_ge(m):
-    assert not(m >= Month(11, 2006))
-    assert not(m >= Month(10, 2006))
-    assert not(m >= Month(12, 2005))
+    assert not (m >= Month(11, 2006))
+    assert not (m >= Month(10, 2006))
+    assert not (m >= Month(12, 2005))
     assert m >= Month(11, 2005)
     assert m >= Month(10, 2005)
     assert m >= Month(11, 2004)
@@ -102,17 +102,17 @@ def test_lt_str(m, zca):
     assert m < '11/2006'
     assert m < '10/2006'
     assert m < '12/2005'
-    assert not(m < '11/2005')
-    assert not(m < '10/2005')
-    assert not(m < '11/2004')
-    assert not(m < '12/2004')
+    assert not (m < '11/2005')
+    assert not (m < '10/2005')
+    assert not (m < '11/2004')
+    assert not (m < '12/2004')
 
 
 def test_gt_str(m, zca):
-    assert not(m > '11/2006')
-    assert not(m > '10/2006')
-    assert not(m > '12/2005')
-    assert not(m > '11/2005')
+    assert not (m > '11/2006')
+    assert not (m > '10/2006')
+    assert not (m > '12/2005')
+    assert not (m > '11/2005')
     assert m > '10/2005'
     assert m > '11/2004'
     assert m > '12/2004'
@@ -123,15 +123,15 @@ def test_le_str(m, zca):
     assert m <= '10/2006'
     assert m <= '12/2005'
     assert m <= '11/2005'
-    assert not(m <= '10/2005')
-    assert not(m <= '11/2004')
-    assert not(m <= '12/2004')
+    assert not (m <= '10/2005')
+    assert not (m <= '11/2004')
+    assert not (m <= '12/2004')
 
 
 def test_ge_str(m, zca):
-    assert not(m >= '11/2006')
-    assert not(m >= '10/2006')
-    assert not(m >= '12/2005')
+    assert not (m >= '11/2006')
+    assert not (m >= '10/2006')
+    assert not (m >= '12/2005')
     assert m >= '11/2005'
     assert m >= '10/2005'
     assert m >= '11/2004'
@@ -148,17 +148,17 @@ def test_lt_str_left(m, zca):
     assert '11/2006' > m
     assert '10/2006' > m
     assert '12/2005' > m
-    assert not('11/2005' > m)
-    assert not('10/2005' > m)
-    assert not('11/2004' > m)
-    assert not('12/2004' > m)
+    assert not ('11/2005' > m)
+    assert not ('10/2005' > m)
+    assert not ('11/2004' > m)
+    assert not ('12/2004' > m)
 
 
 def test_gt_str_left(m, zca):
-    assert not('11/2006' < m)
-    assert not('10/2006' < m)
-    assert not('12/2005' < m)
-    assert not('11/2005' < m)
+    assert not ('11/2006' < m)
+    assert not ('10/2006' < m)
+    assert not ('12/2005' < m)
+    assert not ('11/2005' < m)
     assert '10/2005' < m
     assert '11/2004' < m
     assert '12/2004' < m
@@ -169,15 +169,15 @@ def test_le_str_left(m, zca):
     assert '10/2006' >= m
     assert '12/2005' >= m
     assert '11/2005' >= m
-    assert not('10/2005' >= m)
-    assert not('11/2004' >= m)
-    assert not('12/2004' >= m)
+    assert not ('10/2005' >= m)
+    assert not ('11/2004' >= m)
+    assert not ('12/2004' >= m)
 
 
 def test_ge_str_left(m, zca):
-    assert not('11/2006' <= m)
-    assert not('10/2006' <= m)
-    assert not('12/2005' <= m)
+    assert not ('11/2006' <= m)
+    assert not ('10/2006' <= m)
+    assert not ('12/2005' <= m)
     assert '11/2005' <= m
     assert '10/2005' <= m
     assert '11/2004' <= m

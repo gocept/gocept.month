@@ -42,7 +42,7 @@ class Month:
         ValueError: Year must be at least 1.
         """
         month = int(month)
-        if not(1 <= month <= 12):
+        if not (1 <= month <= 12):
             raise ValueError('Month must be between 1 and 12.')
         self.__month = month
 
